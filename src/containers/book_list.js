@@ -22,10 +22,12 @@ class BookList extends Component {
 // As the name says - whatever the fn returns
 // will become the props for this component.
 // Takes the state as arguement.
-function mapStateToProps(state) {
+const mapStateToProps = state => {
     return {
         books: state.books
     };
 }
 
-export default connect(mapStateToProps)(BookList);
+BookList = connect(mapStateToProps)(BookList);
+
+export default BookList;
