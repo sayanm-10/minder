@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class BookList extends Component {
     renderList() {
@@ -17,3 +18,14 @@ class BookList extends Component {
         )
     }
 }
+
+// As the name says - whatever the fn returns
+// will become the props for this component.
+// Takes the state as arguement.
+function mapStateToProps(state) {
+    return {
+        books: state.books
+    };
+}
+
+export default connect(mapStateToProps)(BookList);
